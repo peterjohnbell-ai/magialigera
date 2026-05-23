@@ -5,9 +5,7 @@ category: Systems Thinking
 summary: A story by Christoph
 featured: true
 ---
-
-
-The Last Survivors of Aquara
+The Last Survivors of Aquara...
 
 The stars stretched endlessly across the viewport as Commander Riya and her co-pilot, Leo, guided their sleek spacecraft toward their destination — a cold, barren rock known as Planet Zephyr-9. Their mission was simple: survey the deserted world and return home. Simple, that is, until everything went wrong.
 
@@ -16,9 +14,6 @@ A sudden asteroid shower hammered the hull without warning. Alarms screamed. Lig
 "Brace yourself!" Riya shouted.
 
 The ship pierced through thick violet clouds and plunged into the ocean of a nearby planet with a thunderous crash. Cold, dark water swallowed them whole.
-
-
-
 
 When Riya opened her eyes, the ship was resting on the shallow seafloor, cracked but not destroyed. Through the cracked viewport, shafts of blue-green light filtered down from the surface. The planet's ocean shimmered like liquid glass.
 
@@ -29,9 +24,6 @@ But they had a bigger problem — they had no food, and their water supply was g
 Thinking quickly, they patched up their suits, swam to the surface, and used broken panels from the ship to craft primitive fishing tools. The ocean, it turned out, was teeming with life — strange, glowing fish that darted in silver schools beneath the waves. They caught enough to eat and used the ship's remaining filtration unit to purify the seawater into something safe to drink.
 
 They were surviving. But they weren't alone — or at least, they hadn't always been.
-
-
-
 
 On the third day, Leo spotted something half-buried in the sand along the shoreline — the crumbled remains of buildings. Towers swallowed by moss. Roads cracked and overgrown. An entire civilization, silent and forgotten.
 
@@ -44,9 +36,6 @@ They pushed deeper inland, driven by curiosity and necessity. Beneath the ruins,
 With remarkable determination, they constructed a proper base — walls, a roof, and most importantly, an oxygen chamber, a sealed room where they could breathe freely without their suits. They even crafted reinforced swimming suits from the ship's insulation lining, allowing them to dive deeper and explore further.
 
 They were no longer just surviving. They were building a life.
-
-
-
 
 But the ruins still haunted them.
 
@@ -74,9 +63,6 @@ Riya stood at the entrance of their base and looked up at the alien sky, filled 
 
 She smiled. "Then let's build a way."
 
-
-
-
 It took three months. Three months of melting metal, designing parts, testing engines, and arguing over blueprints. But piece by piece, bolt by bolt, a spacecraft rose from the ruins of a dead civilization — a tribute to the people who had once lived there and a testament to what two determined humans could do.
 
 On the day they launched, Riya looked back through the viewport at the shimmering ocean planet growing smaller beneath them.
@@ -86,8 +72,5 @@ On the day they launched, Riya looked back through the viewport at the shimmerin
 Leo nodded. "And maybe someone will come back someday — and give this world another chance."
 
 The ship accelerated into the stars, carrying two survivors, one incredible story, and the small, precious hope that no world — and no people — should ever truly be forgotten.
-
-
-
 
 The End.
