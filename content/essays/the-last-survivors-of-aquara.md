@@ -1,23 +1,25 @@
 ---
-title: The Last Survivors of Aquara
-date: May 23, 2026
-category: Systems Thinking
+excerpt: >-
+  This story didn't start on a screen — it started on a folded piece of paper. A
+  young writer (my 10 yrs old son), excited to see his work published, handed me
+  this tale written by hand in his own language two days after I promised him a
+  spot on this site. I translated it, built the characters a little further, and
+  here it is. The imagination behind it? Entirely his.
+
+  Two astronauts. A mysterious ocean world. A civilization lost to silence. And the will to survive it all.
 summary: >-
   The Last Survivors of Aquara
 
   This story didn't start on a screen — it started on a folded piece of paper. A young writer (my 10 yrs old son), excited to see his work published, handed me this tale written by hand in his own language two days after I promised him a spot on this site. I translated it, built the characters a little further, and here it is. The imagination behind it? Entirely his.
 
   Two astronauts. A mysterious ocean world. A civilization lost to silence. And the will to survive it all.
+title: The Last Survivors of Aquara
+type: Short Story
+author: Christoph
 featured: true
+date: May 23, 2026
+category: Systems Thinking
 ---
-The Last Survivors of Aquara
-
-This story didn't start on a screen — it started on a folded piece of paper. A young writer (my 10 yrs old son), excited to see his work published, handed me this tale written by hand in his own language two days after I promised him a spot on this site. I translated it, built the characters a little further, and here it is. The imagination behind it? Entirely his.
-
-Two astronauts. A mysterious ocean world. A civilization lost to silence. And the will to survive it all.
-
-
-
 The stars stretched endlessly across the viewport as Commander Riya and her co-pilot, Leo, guided their sleek spacecraft toward their destination — a cold, barren rock known as Planet Zephyr-9. Their mission was simple: survey the deserted world and return home. Simple, that is, until everything went wrong.
 
 A sudden asteroid shower hammered the hull without warning. Alarms screamed. Lights flickered. Leo wrestled desperately with the controls, but it was no use — they were being pulled off course at terrifying speed.
@@ -85,5 +87,3 @@ Leo nodded. "And maybe someone will come back someday — and give this world an
 The ship accelerated into the stars, carrying two survivors, one incredible story, and the small, precious hope that no world — and no people — should ever truly be forgotten.
 
 The End.
-
-Chirtoph
