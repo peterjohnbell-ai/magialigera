@@ -2,19 +2,59 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: public/images
+public_folder: /images
 
 collections:
-  - name: "essays"
-    label: "Essays"
-    folder: "content/essays"
+  - name: essays
+    label: Writing
+    label_singular: Piece
+    folder: content/essays
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", format: "MMMM DD, YYYY", date_format: "MMMM DD, YYYY", time_format: false }
-      - { label: "Category", name: "category", widget: "select", options: ["Psychology", "Leadership & Strategy", "Meaningful Living", "Systems Thinking"] }
-      - { label: "Summary", name: "summary", widget: "text", hint: "One or two sentences shown on the homepage" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show this essay on the homepage" }
+      - label: Title
+        name: title
+        widget: string
+
+      - label: Date
+        name: date
+        widget: date
+        format: YYYY-MM-DD
+
+      - label: Type
+        name: type
+        widget: select
+        options:
+          - Essay
+          - Article
+          - Short Story
+          - Other
+        default: Essay
+        hint: "What kind of writing is this?"
+
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Psychology
+          - "Leadership & Strategy"
+          - Meaningful Living
+          - Systems Thinking
+
+      - label: Author
+        name: author
+        widget: string
+        default: "Bell John K"
+        required: false
+        hint: "Who wrote this? Default is Bell John K."
+
+      - label: Excerpt
+        name: excerpt
+        widget: text
+        required: false
+        hint: "One or two sentences shown on the homepage and writing list."
+
+      - label: Body
+        name: body
+        widget: markdown
