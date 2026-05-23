@@ -2,7 +2,12 @@
 title: The Last Survivors of Aquara
 date: May 23, 2026
 category: Systems Thinking
-summary: A story by Christoph
+summary: >-
+  The Last Survivors of Aquara
+
+  This story didn't start on a screen — it started on a folded piece of paper. A young writer (my 10 yrs old son), excited to see his work published, handed me this tale written by hand in his own language two days after I promised him a spot on this site. I translated it, built the characters a little further, and here it is. The imagination behind it? Entirely his.
+
+  Two astronauts. A mysterious ocean world. A civilization lost to silence. And the will to survive it all.
 featured: true
 ---
 The Last Survivors of Aquara...
