@@ -949,33 +949,49 @@ function mdToHtml(md){
     .split('\n\n').map(function(p){return p.trim()?'<p>'+p+'</p>':''}).join('');
 }
 
-// Writing files — add slugs here as you publish via CMS
-var writingFiles=[];
+// Writing engine — loads dynamically from GitHub
 var loadedWriting=[];
 var currentFilter='all';
 
 function loadWriting(){
-  if(!writingFiles.length){
-    renderHomeWriting([]);
-    renderAllWriting([]);
-    return;
+  var REPO='peterjohnbell-ai/magialigera';
+  // Try content/writing first, then content/essays
+  var urls=[
+    'https://api.github.com/repos/'+REPO+'/contents/content/writing',
+    'https://api.github.com/repos/'+REPO+'/contents/content/essays'
+  ];
+
+  function tryFolder(index){
+    if(index>=urls.length){
+      renderHomeWriting([]);
+      renderAllWriting([]);
+      return;
+    }
+    fetch(urls[index])
+      .then(function(r){return r.ok?r.json():null})
+      .then(function(files){
+        if(!files||!files.length){tryFolder(index+1);return;}
+        var mdFiles=files.filter(function(f){return f.name.endsWith('.md');});
+        if(!mdFiles.length){tryFolder(index+1);return;}
+        var promises=mdFiles.map(function(file){
+          return fetch(file.download_url)
+            .then(function(r){return r.ok?r.text():null})
+            .then(function(text){
+              if(!text)return null;
+              var parsed=parseFrontMatter(text);
+              return{slug:file.name.replace('.md',''),meta:parsed.meta,body:parsed.body};
+            }).catch(function(){return null;});
+        });
+        Promise.all(promises).then(function(results){
+          loadedWriting=results.filter(Boolean).sort(function(a,b){
+            return new Date(b.meta.date)-new Date(a.meta.date);
+          });
+          renderHomeWriting(loadedWriting);
+          renderAllWriting(loadedWriting);
+        });
+      }).catch(function(){tryFolder(index+1);});
   }
-  var promises=writingFiles.map(function(slug){
-    return fetch('/content/writing/'+slug+'.md')
-      .then(function(r){return r.ok?r.text():null})
-      .then(function(text){
-        if(!text)return null;
-        var parsed=parseFrontMatter(text);
-        return{slug:slug,meta:parsed.meta,body:parsed.body};
-      }).catch(function(){return null});
-  });
-  Promise.all(promises).then(function(results){
-    loadedWriting=results.filter(Boolean).sort(function(a,b){
-      return new Date(b.meta.date)-new Date(a.meta.date);
-    });
-    renderHomeWriting(loadedWriting);
-    renderAllWriting(loadedWriting);
-  });
+  tryFolder(0);
 }
 
 function writingItemHomeHTML(w){
