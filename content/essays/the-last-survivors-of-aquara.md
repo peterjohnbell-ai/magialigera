@@ -85,3 +85,5 @@ Leo nodded. "And maybe someone will come back someday — and give this world an
 The ship accelerated into the stars, carrying two survivors, one incredible story, and the small, precious hope that no world — and no people — should ever truly be forgotten.
 
 The End.
+
+Chirtoph
