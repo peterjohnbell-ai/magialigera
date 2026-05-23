@@ -1,4 +1,34 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: image
+public_folder: /image
+
+collections:
+  - name: writing
+    label: Writing
+    label_singular: Piece
+    folder: content/writing
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - label: Type
+        name: type
+        widget: select
+        options: [Essay, Article, Short Story]
+        default: Essay
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Behaviour & Habit
+          - Leadership & Strategy
+          - Meaningful Living
+          - Systems Thinking
+      - { label: Author, name: author, widget: string, default: Bell John }
+      - { label: Reading Time, name: readingTime, widget: string, hint: "e.g. 5 min read" }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Body, name: body, widget: markdown }
