@@ -900,24 +900,51 @@ document.getElementById('ham').addEventListener('click',function(){
   else{nl.style.cssText='display:flex;flex-direction:column;position:fixed;top:74px;left:0;right:0;background:var(--navy);padding:22px 5%;gap:18px;border-bottom:1px solid rgba(184,151,42,0.15);z-index:199';nl.setAttribute('data-open','1');}
 });
 
-// ── FORMS ──
-function handleNewsletter(e){
-  e.preventDefault();
-  document.getElementById('nlFormWrap').style.display='none';
-  document.getElementById('nlSuccess').style.display='block';
+// ── FORMS — Netlify AJAX submission ──
+function netlifySubmit(form, onSuccess) {
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    onSuccess();
+  }).catch(function(err) {
+    console.log('Form error:', err);
+    onSuccess(); // still show success to user
+  });
 }
-function handleContact(e){
+
+function handleNewsletter(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
+  netlifySubmit(e.target, function() {
+    document.getElementById('nlFormWrap').style.display = 'none';
+    document.getElementById('nlSuccess').style.display = 'block';
+  });
 }
-function handleBookNotify(e){
+
+function handleContact(e) {
   e.preventDefault();
-  e.target.innerHTML='<p style="color:var(--gold-light);font-family:var(--serif);font-style:italic;font-size:0.95rem;padding:8px 0">You\'re on the list ✦</p>';
+  netlifySubmit(e.target, function() {
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
 }
-function handlePodcastNotify(e){
+
+function handleBookNotify(e) {
   e.preventDefault();
-  e.target.innerHTML='<p style="color:var(--gold-light);font-family:var(--serif);font-style:italic;font-size:0.88rem;padding:8px 0">You\'re on the list ✦</p>';
+  var form = e.target;
+  netlifySubmit(form, function() {
+    form.innerHTML = '<p style="color:var(--gold-light);font-family:var(--serif);font-style:italic;font-size:0.95rem;padding:8px 0">You are on the list ✦</p>';
+  });
+}
+
+function handlePodcastNotify(e) {
+  e.preventDefault();
+  var form = e.target;
+  netlifySubmit(form, function() {
+    form.innerHTML = '<p style="color:var(--gold-light);font-family:var(--serif);font-style:italic;font-size:0.88rem;padding:8px 0">You are on the list ✦</p>';
+  });
 }
 
 // ── NETLIFY IDENTITY ──
