@@ -81,6 +81,45 @@ body{background:var(--navy);color:var(--white);font-family:var(--sans);font-weig
 </head>
 <body>
 
+
+<div id="gate" style="position:fixed;inset:0;background:var(--navy);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;">
+  <div style="background:var(--navy-mid);border:1px solid rgba(184,151,42,0.2);padding:48px;max-width:380px;width:100%;text-align:center;">
+    <div style="font-family:var(--serif);font-size:2rem;color:rgba(184,151,42,0.3);margin-bottom:16px;">ML</div>
+    <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--white);margin-bottom:8px;">Admin Access</h2>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);margin-bottom:28px;">Enter your password to continue</p>
+    <input id="gateInput" type="password" placeholder="Password"
+      style="width:100%;padding:13px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:var(--white);font-family:var(--sans);font-size:0.9rem;outline:none;margin-bottom:12px;text-align:center;letter-spacing:0.1em;"
+      onkeydown="if(event.key==='Enter')checkGate()">
+    <button onclick="checkGate()"
+      style="width:100%;padding:14px;background:var(--gold);color:var(--white);font-family:var(--sans);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;border:none;cursor:pointer;">
+      Enter Dashboard
+    </button>
+    <p id="gateError" style="color:#e74c3c;font-size:0.75rem;margin-top:10px;display:none;">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<script>
+// Change this password to whatever you want
+var DASHBOARD_PASSWORD = 'MagiaLigera2026';
+
+function checkGate() {
+  var input = document.getElementById('gateInput').value;
+  if (input === DASHBOARD_PASSWORD) {
+    sessionStorage.setItem('ml_dashboard_auth', '1');
+    document.getElementById('gate').style.display = 'none';
+  } else {
+    document.getElementById('gateError').style.display = 'block';
+    document.getElementById('gateInput').value = '';
+    document.getElementById('gateInput').focus();
+  }
+}
+
+// Check if already authenticated this session
+if (sessionStorage.getItem('ml_dashboard_auth') === '1') {
+  document.getElementById('gate').style.display = 'none';
+}
+</script>
+
 <div class="topbar">
   <div class="brand-wrap">
     <div class="brand-icon">ML</div>
