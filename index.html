@@ -107,6 +107,15 @@ h2{font-family:var(--serif);font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:400
 .book-notify-form button{padding:13px 20px;background:var(--gold);color:var(--white);font-family:var(--sans);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;white-space:nowrap;transition:background 0.25s}
 .book-notify-form button:hover{background:var(--gold-light)}
 .book-notify-note{font-size:0.7rem;color:rgba(255,255,255,0.22);margin-top:8px}
+.book-buy-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px}
+.book-buy{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.buy-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.13em;text-transform:uppercase;text-decoration:none;transition:background 0.25s,border-color 0.25s,color 0.25s;cursor:pointer}
+.buy-btn-primary{background:var(--gold);color:var(--white);border:1px solid var(--gold)}
+.buy-btn-primary:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.buy-btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.42)}
+.buy-btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.buy-btn-soon{background:transparent;color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.13);cursor:default;pointer-events:none}
+.book-buy-note{font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:2px}
 .book-cover-wrap{display:flex;justify-content:center}
 .book-cover-outer{position:relative}
 .book-badge{position:absolute;top:-14px;right:-14px;z-index:2;background:var(--gold);color:var(--white);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;padding:7px 16px;box-shadow:0 4px 20px rgba(184,151,42,0.4)}
@@ -450,17 +459,17 @@ footer{background:var(--navy);color:rgba(255,255,255,0.42);padding:40px 5%;displ
           <li>Build daily routines that actually last</li>
           <li>Live with more intention and less noise</li>
         </ul>
-        <p class="book-notify-label">Get notified when it launches</p>
-        <form class="book-notify-form" name="book-notify" netlify netlify-honeypot="bot-field" onsubmit="handleBookNotify(event)">
-          <input type="hidden" name="form-name" value="book-notify">
-          <input type="email" name="email" placeholder="Your email address" required>
-          <button type="submit">Notify Me</button>
-        </form>
-        <p class="book-notify-note">No spam. Just a single email when the book is ready.</p>
+        <p class="book-buy-label">Now available &mdash; get your copy</p>
+        <div class="book-buy">
+          <a href="https://notionpress.com/in/read/habitually-positive" target="_blank" rel="noopener" class="buy-btn buy-btn-primary">Buy on Notion Press</a>
+          <a href="https://amzn.in/d/04hbwLNL" target="_blank" rel="noopener" class="buy-btn buy-btn-outline">Buy on Amazon</a>
+          <span class="buy-btn buy-btn-soon">Flipkart &mdash; coming soon</span>
+        </div>
+        <p class="book-buy-note">Paperback &#8377;550 &middot; Hardcover &#8377;730 &middot; 416 pages</p>
       </div>
       <div class="book-cover-wrap">
         <div class="book-cover-outer">
-          <div class="book-badge">Coming 2026</div>
+          <div class="book-badge">Out Now</div>
           <div class="book-cover">
             <div class="bc-author">Bell John</div>
             <div class="bc-mono">ML</div>
@@ -469,7 +478,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.42);padding:40px 5%;displ
               <div class="bc-divider"></div>
               <div class="bc-sub">The Brain Science and Daily Practice<br>of a Meaningful, Joyful Life</div>
             </div>
-            <div class="bc-soon">Coming Soon &mdash; 2026</div>
+            <div class="bc-soon">Now Available</div>
           </div>
         </div>
       </div>
